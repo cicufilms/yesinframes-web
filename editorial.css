@@ -1,0 +1,520 @@
+/* Editorial adaptation: original Yesinframes images, fonts and brand palette. */
+:root { --header-space: 106px; --section-y: clamp(80px, 9vw, 145px); }
+body::after { content:''; position:fixed; inset:0; pointer-events:none; z-index:150; opacity:.035; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' filter='url(%23grain)' opacity='.5' d='M0 0h180v180H0z'/%3E%3C/svg%3E"); }
+.wedding-header { top:0; left:0; width:100%; height:100px; padding:0 36px; display:grid; grid-template-columns:1fr auto 1fr; gap:24px; border:0; border-bottom:1px solid var(--line-strong); border-radius:0; color:var(--ink); background:var(--paper); box-shadow:none; backdrop-filter:none; transform:none; }
+.wedding-header.is-hidden { transform:translateY(-100%); }
+body.menu-open .wedding-header { background:var(--wine); color:var(--ivory); }
+.wedding-wordmark { font-size:clamp(25px,3.2vw,48px); letter-spacing:-.045em; }
+.header-tools { display:flex; align-items:center; justify-content:flex-end; gap:22px; }
+.header-inquire, .menu-button { width:max-content; min-width:104px; height:40px; padding:7px 24px; border:1px solid currentColor; border-radius:50%; background:transparent; font:italic 200 19px/1.2 var(--font-serif); letter-spacing:0; text-transform:none; text-align:center; }
+.menu-button i { display:none; }
+.header-inquire:hover, .menu-button:hover { background:var(--wine); color:var(--ivory); }
+.menu-stage { padding-top:125px; }
+.menu-loop { animation:none; }
+.menu-set--echo { display:none; }
+.menu-nav { height:auto; overflow:visible; }
+.site-menu .menu-loop a { font-size:clamp(27px,4.4vh,54px); line-height:1.2; padding-block:4px; }
+.menu-set { gap:7px; }
+.site-menu { overflow-y:auto; }
+.menu-foot-row { position:relative; margin-top:25px; padding-bottom:28px; }
+.hero { margin-top:100px; grid-template-columns:1fr 1fr; min-height:660px; height:calc(100svh - 100px); max-height:880px; }
+.hero__copy { position:relative; isolation:isolate; padding:170px 6% 55px; align-items:center; text-align:center; justify-content:center; }
+.hero__copy>.label { order:2; font-size:9px; margin:30px 0 12px; letter-spacing:.14em; }
+.hero h1 { position:relative; font-size:clamp(40px,4.15vw,70px); line-height:1.07; letter-spacing:.005em; text-transform:uppercase; text-wrap:balance; }
+.hero h1 em { text-transform:none; }
+.hero__lead { order:3; max-width:330px; margin:0 auto; font-size:13px; line-height:1.8; }
+.hero__location { order:4; margin-top:18px; font:200 12px/1.4 var(--font-serif); text-transform:uppercase; letter-spacing:.06em; }
+.hero__actions { order:5; justify-content:center; gap:18px; margin-top:28px; }
+.hero__actions .btn { padding:14px 25px; font-size:16px; }
+.hero__actions .link { font-size:10px; }
+.hero-collage { position:absolute; inset:0; z-index:-1; overflow:hidden; }
+.hero-collage img { position:absolute; object-fit:cover; opacity:.2; filter:grayscale(1); }
+.hero-collage__one { width:28%; height:44%; left:4%; top:21%; }
+.hero-collage__two { width:15%; height:18%; right:20%; top:5%; }
+.hero-collage__three { width:15%; height:18%; right:4%; bottom:10%; }
+.hero__media { min-width:0; border-left:1px solid var(--line-strong); }
+.hero__media--mobile { display:none; }
+.hero__slide:first-child img { object-position:54% center; }
+.btn { border-radius:50%; min-height:50px; padding:16px 32px; font:italic 200 20px/1.1 var(--font-serif); text-transform:none; letter-spacing:0; background:transparent; color:var(--green); }
+.btn:hover { color:var(--ivory); }
+.link { font-weight:400; }
+/* Botones editoriales: cupido y marca aparecen como una pequeña interacción. */
+.btn--say-yes, .btn--reveal-brand { position:relative; isolation:isolate; overflow:hidden; display:inline-flex; align-items:center; justify-content:center; gap:12px; min-width:220px; padding:14px 58px 14px 24px; border:1px solid currentColor; border-radius:999px; color:var(--green); background:transparent; font:italic 200 18px/1.1 var(--font-serif); white-space:nowrap; }
+.btn--say-yes .btn__label, .btn--say-yes .btn__hover-text, .btn--reveal-brand .btn__label { position:relative; z-index:1; }
+.btn--say-yes .btn__label, .btn--say-yes .btn__hover-text { transition:opacity .3s var(--ease-out), transform .45s var(--ease-out); }
+.btn--say-yes .btn__hover-text { position:absolute; inset:0; display:grid; place-items:center; opacity:0; transform:translateY(8px); }
+.btn--say-yes:not(.btn--cream) .btn__icon { color:var(--ivory);background:var(--green); }
+.btn__icon { position:absolute; z-index:0; right:6px; top:50%; display:block; width:42px; height:42px; border-radius:50%; transform:translateY(-50%); background:currentColor; color:var(--ivory); transition:width .45s var(--ease-out), border-radius .45s var(--ease-out), transform .45s var(--ease-out), background .3s; }
+.btn__icon::before { content:''; position:absolute; inset:0; background:var(--ivory); mask:url('assets/cupid-isotipo.svg') center/28px no-repeat; -webkit-mask:url('assets/cupid-isotipo.svg') center/28px no-repeat; transition:opacity .25s ease; }
+.btn--say-yes:hover .btn__label { opacity:0; transform:translateY(-8px); }
+.btn--say-yes:hover .btn__hover-text { opacity:1; transform:none; }
+.btn--say-yes:hover .btn__icon { width:calc(100% - 12px); border-radius:999px; transform:translateY(-50%) scale(1.01); background:var(--wine); }
+.btn--say-yes:hover .btn__icon::before { opacity:0; }
+.btn--reveal-brand { padding-right:58px; }
+.btn--reveal-brand .btn__icon { background:var(--green); }
+.btn--reveal-brand .btn__icon::before { background:var(--ivory); }
+.btn--reveal-brand .btn__icon::after { content:'YESINFRAMES'; position:absolute; inset:0; display:grid; place-items:center; color:var(--ivory); font:500 10px/1 var(--font-sans); letter-spacing:.16em; opacity:0; transition:opacity .25s .15s; mask:none; -webkit-mask:none; }
+.btn--reveal-brand:hover .btn__icon { width:calc(100% - 12px); border-radius:999px; transform:translateY(-50%); background:var(--wine); mask:none; -webkit-mask:none; }
+.btn--reveal-brand:hover .btn__icon::before { opacity:0; }
+.btn--reveal-brand:hover .btn__icon::after { opacity:1; }
+.btn--reveal-brand:hover .btn__label { opacity:0; }
+.btn--cream.btn--say-yes { color:var(--ivory); }
+.btn--cream.btn--say-yes .btn__icon { color:var(--green); background:var(--ivory); }
+.btn--cream.btn--say-yes .btn__icon::before { background:var(--green); }
+.btn--cream.btn--say-yes:hover .btn__icon { background:var(--ivory); color:var(--green); }
+
+/* En pantallas táctiles no existe hover persistente: conserva visible y legible el CTA. */
+@media (hover: none) {
+  .btn--say-yes:hover { color:var(--green); border-color:var(--green); background:transparent; }
+  .btn--cream.btn--say-yes:hover { color:var(--ivory); border-color:var(--ivory); background:transparent; }
+  .btn--say-yes:hover .btn__label { opacity: 1; transform: none; }
+  .btn--say-yes:hover .btn__hover-text { opacity: 0; transform: translateY(8px); }
+  .btn--say-yes:hover .btn__icon { width: 42px; border-radius: 50%; transform: translateY(-50%); background: var(--green); }
+  .btn--say-yes:hover .btn__icon::before { opacity: 1; }
+  .btn--cream.btn--say-yes:hover .btn__icon { background:var(--ivory); }
+}
+.btn--block.btn--reveal-brand { width:100%; }
+.philosophy { position:relative; isolation:isolate; max-width:none; margin:0; padding:100px 22%; background:var(--green); overflow:hidden; }
+.philosophy__panel { position:relative; max-width:780px; margin:auto; background:transparent; padding:0; }
+.philosophy__lead { font:200 clamp(24px,2.5vw,38px)/1.2 var(--font-serif); text-transform:uppercase; letter-spacing:.02em; }
+.philosophy h2 { font-size:clamp(44px,5.6vw,86px); margin-block:24px; }
+.philosophy__micro { max-width:28rem; margin:0 auto 18px; color:rgba(247,243,232,.72); font:italic 200 clamp(18px,1.7vw,25px)/1.2 var(--font-serif); letter-spacing:.01em; text-align:center; }
+.typewriter { display:block; width:min(100%, 34ch); height:1.2em; margin-inline:auto; overflow:hidden; white-space:nowrap; text-align:center; border-right:1px solid currentColor; padding-right:.14em; animation:typewriter-caret .85s steps(1,end) infinite; }
+@keyframes typewriter-caret { 0%,49% { border-color:currentColor; } 50%,100% { border-color:transparent; } }
+.philosophy__body { max-width:510px; font-size:14px; line-height:1.9; }
+.philosophy .cupid-mark { width:60px; height:54px; margin-bottom:22px; }
+.philosophy__photos { position:absolute; inset:0; z-index:-1; }
+.philosophy__photos img { position:absolute; width:26%; height:70%; object-fit:cover; opacity:.22; }
+.philosophy__photos img:first-child { top:8%; left:3%; }
+.philosophy__photos img:last-child { bottom:5%; right:3%; width:20%; height:55%; }
+.proof { padding:32px var(--gutter) 22px; border-bottom:1px solid var(--line); }
+.proof__stats { padding:0; }
+.stat__value { font-size:clamp(28px,3vw,44px); }
+.proof__places { margin-top:22px; }
+.work .section-head { max-width:1000px; margin:0 auto 75px; grid-template-columns:1.2fr 1fr; }
+h2 { font-size:clamp(38px,4.8vw,72px); }
+.work__grid { max-width:1220px; margin:auto; gap:70px 6%; grid-template-columns:1fr 1fr 1fr; align-items:start; }
+.work__grid .story:nth-child(3n + 2) { margin-top:100px; }
+.work__grid .story:nth-child(3n) { margin-top:35px; }
+.story__frame { border:9px solid var(--surface); outline:1px solid var(--line); }
+.story figcaption { padding-top:20px; font:italic 200 23px/1.25 var(--font-serif); text-align:center; }
+.story figcaption .label { font-style:normal; font-size:9px; margin-bottom:8px; }
+.cases { max-width:1220px; margin-inline:auto; }
+.about { max-width:none; padding:clamp(100px,10vw,160px) clamp(64px,9vw,150px); gap:clamp(72px,9vw,150px); background:linear-gradient(90deg,var(--paper-tan),var(--paper)); }
+.about__portrait { position:relative; min-height:620px; padding:48px 16%; overflow:hidden; background:transparent; }
+.about__portrait img { border:8px solid var(--surface); height:520px; object-position:50% 30%; }
+.about__overlay-title { display:none; }
+.about__copy { max-width:none; padding:70px clamp(35px,8vw,120px); background:transparent; }
+.about__title-lockup { display:grid; grid-template-columns:minmax(0,1fr); align-items:start; margin:0 0 38px; }
+.about__hello { padding-top:.35em; font:500 12px/1.2 var(--font-sans); letter-spacing:.13em; }
+.about__copy h2, .about__overlay-title h2 { margin:0; font-size:clamp(48px,5.2vw,82px); line-height:.9; font-weight:400; letter-spacing:-.035em; text-wrap:balance; }
+.about__copy h2 em, .about__overlay-title h2 em { font-weight:200; }
+.about__intro { max-width:28rem; font-size:14px; line-height:1.85; }
+.about__copy .link { align-self:flex-start; margin-top:42px; }
+.experience__head { max-width:1000px; }
+.experience h2 { font-size:clamp(34px,3.8vw,58px); }
+.voices { background:var(--paper-tan); }
+.faq h2 { font-size:clamp(38px,4vw,58px); }
+.contact { display:grid; grid-template-columns:1fr 1fr; max-width:none; padding:0; margin:0; background:var(--green); }
+.contact__photo { min-height:650px; padding:60px 17%; background:linear-gradient(rgba(38,51,43,.4),rgba(38,51,43,.4)),url('assets/photos/hero-atardecer.webp') center/cover; }
+.contact__photo img { width:100%; height:100%; max-height:570px; object-fit:cover; border:9px solid var(--paper); }
+.contact__panel { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:70px 10%; background:transparent; }
+.contact h2 { font-size:clamp(50px,5.5vw,86px); }
+.contact .btn { color:var(--ivory); border-color:var(--ivory-soft); width:auto; }
+.contact .btn:hover { background:var(--ivory); color:var(--green); }
+.footer__brand { font-size:clamp(32px,4vw,65px); letter-spacing:-.02em; }
+.sticky-wa { border-radius:50%; box-shadow:none; }
+
+/* CTA que aún mantenían el enlace subrayado y la pastilla oscura antigua. */
+.hero__actions .link,
+.experience__cta .link,
+.about__copy .link {
+  position:relative;
+  display:inline-flex;
+  min-height:52px;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  padding:7px 52px 7px 22px;
+  border:1px solid rgba(38,51,43,.62);
+  border-radius:999px;
+  color:var(--green);
+  font:italic 200 18px/1.1 var(--font-serif);
+  letter-spacing:0;
+  text-transform:none;
+  text-decoration:none;
+  transition:color .35s var(--ease-out),background .35s,border-color .35s,transform .4s var(--ease-out),box-shadow .35s;
+}
+.hero__actions .link::after,
+.experience__cta .link::after,
+.about__copy .link::after {
+  content:'';
+  position:absolute;right:15px;top:50%;
+  width:20px;height:20px;
+  background:var(--ivory);
+  mask:url('assets/cupid-isotipo.svg') center/contain no-repeat;
+  -webkit-mask:url('assets/cupid-isotipo.svg') center/contain no-repeat;
+  transform:translateY(-50%);
+  transition:transform .35s var(--ease-out),background .35s;
+}
+.hero__actions .link::before,
+.experience__cta .link::before,
+.about__copy .link::before {
+  content:'';
+  position:absolute;right:8px;top:50%;
+  width:36px;height:36px;
+  border-radius:50%;
+  background:var(--green);
+  transform:translateY(-50%);
+  transition:background .35s;
+}
+.hero__actions .link:hover,
+.experience__cta .link:hover,
+.about__copy .link:hover {
+  border-color:var(--wine);
+  background:var(--wine);
+  color:var(--ivory);
+  box-shadow:0 12px 28px rgba(25,20,18,.12);
+  transform:translateY(-2px);
+}
+.hero__actions .link:hover::after,
+.experience__cta .link:hover::after,
+.about__copy .link:hover::after { background:var(--ivory);transform:translateY(-50%) rotate(-12deg) scale(1.08); }
+.hero__actions .link:hover::before,
+.experience__cta .link:hover::before,
+.about__copy .link:hover::before { background:var(--wine); }
+.sticky-wa {
+  height:54px;
+  padding:5px 55px 5px 20px;
+  border:1px solid rgba(247,243,232,.54);
+  border-radius:999px;
+  background:var(--green-deep);
+  box-shadow:0 12px 30px rgba(25,20,18,.2);
+  font:italic 200 17px/1 var(--font-serif);
+  letter-spacing:.01em;
+  text-transform:none;
+  transition:opacity .4s var(--ease-out),transform .4s var(--ease-out),background .35s,border-color .35s,box-shadow .35s;
+}
+.sticky-wa::after {
+  content:'';
+  position:absolute;top:50%;right:17px;
+  width:22px;height:22px;
+  background:var(--green);
+  mask:url('assets/cupid-isotipo.svg') center/contain no-repeat;
+  -webkit-mask:url('assets/cupid-isotipo.svg') center/contain no-repeat;
+  transform:translateY(-50%);
+  transition:transform .35s var(--ease-out),background .35s;
+}
+.sticky-wa::before {
+  content:'';
+  position:absolute;top:50%;right:7px;
+  width:40px;height:40px;
+  border-radius:50%;
+  background:var(--ivory);
+  transform:translateY(-50%);
+  transition:background .35s;
+}
+.sticky-wa:hover { border-color:var(--ivory);background:var(--wine);box-shadow:0 16px 36px rgba(25,20,18,.27); }
+.sticky-wa:hover::after { background:var(--wine);transform:translateY(-50%) rotate(-12deg) scale(1.08); }
+.experience__cta { display:flex;justify-content:center;text-align:center; }
+@media(max-width:700px) {
+  .hero__actions--mobile .link { min-height:52px;padding:7px 52px 7px 22px; }
+  .sticky-wa { min-height:54px;height:auto;padding:8px 55px 8px 20px; }
+}
+@media(min-width:761px) and (max-height:780px) { .site-menu .menu-loop a { font-size:30px; } .menu-stage { padding-top:110px; } .menu-foot-row { margin-top:5px; } }
+@media(max-width:1000px) {
+ .wedding-header { padding-inline:22px; gap:12px; }
+ .header-tools { gap:12px; }
+ .header-inquire,.menu-button { min-width:80px; padding-inline:15px; }
+ .hero { min-height:620px; }
+ .hero__copy { padding-top:125px; }
+ .hero h1 { font-size:4.7vw; }
+ .hero__media { order:initial; min-height:0; height:auto; }
+ .hero__lead { max-width:260px; }
+ .hero__actions { gap:15px; }
+ .hero__actions .btn { font-size:15px; padding-inline:16px; }
+ .philosophy { padding:80px 14%; }
+ .about { grid-template-columns:1fr 1fr; gap:5%; }
+ .about__portrait { min-height:0; padding:45px 10% 70px; aspect-ratio:auto; }
+ .about__portrait img { height:450px; }
+ .about__copy { padding:45px 8%; }
+ .contact__photo { padding-inline:12%; }
+}
+@media(max-width:700px) {
+ :root { --header-space:86px; }
+ .wedding-header { height:80px; grid-template-columns:1fr auto; padding:0 20px; }
+ .wedding-wordmark { font-size:29px; }
+ .header-inquire { display:none; }
+ .header-tools { gap:12px; }
+ .menu-button { min-width:58px; height:34px; padding:5px 12px; font-size:16px; }
+ .hero { margin-top:80px; grid-template-columns:1fr; height:auto; max-height:none; min-height:0; }
+ .hero__copy { padding:125px 28px 40px; min-height:530px; }
+ .hero h1 { font-size:clamp(38px,8.8vw,60px); }
+ .hero__copy>.label { margin-top:28px; }
+ .hero__lead { max-width:310px; }
+ .hero__location { max-width:27rem; margin-inline:auto; font-size:12px; line-height:1.45; text-wrap:balance; }
+ .hero__media { height:65svh; min-height:380px; max-height:660px; border-left:0; border-top:1px solid var(--line-strong); }
+ .hero-collage__two { top:5%; width:18%; height:19%; }
+ .hero-collage__one { width:30%; height:42%; }
+ .hero-collage__three { bottom:8%; }
+ .hero__actions { margin-top:24px; }
+ .philosophy { padding:75px 25px; }
+ .philosophy__photos img:first-child { width:40%; height:55%; opacity:.13; }
+ .philosophy__photos img:last-child { width:35%; height:50%; opacity:.13; }
+ .philosophy__lead { font-size:24px; }
+ .philosophy h2 { font-size:48px; }
+ .philosophy__body { font-size:13px; max-width:370px; }
+ .philosophy__micro { font-size:19px; max-width:300px; margin-inline:auto; }
+ .work .section-head { grid-template-columns:1fr; margin-bottom:45px; gap:25px; }
+ .work__grid { grid-template-columns:1fr 1fr; gap:38px 20px; }
+ .work__grid .story:nth-child(n) { margin-top:0; }
+ .work__grid .story:nth-child(2n) { margin-top:55px; }
+ .story__frame { border-width:5px; }
+ .story figcaption { font-size:20px; }
+ .story figcaption .label { font-size:8px; letter-spacing:.12em; }
+ .about { grid-template-columns:1fr; padding:45px 24px; gap:30px; }
+ .about__portrait { padding:35px 18% 65px; }
+ .about__portrait img { height:390px; }
+ .about__copy { padding:42px 8% 48px; }
+ .about__copy .link { margin-left:0; }
+ .experience__head { text-align:center; }
+ .experience h2 { font-size:38px; }
+ .contact { grid-template-columns:1fr; }
+ .contact__photo { min-height:0; height:440px; padding:35px 22%; }
+ .contact__panel { padding:65px 25px; }
+ .contact h2 { font-size:58px; }
+ .site-menu .menu-loop a { font-size:clamp(25px,4.6vh,39px); }
+ .menu-stage { padding-top:110px; }
+ .menu-foot-row { margin-top:15px; }
+ .sticky-wa { left:auto; right:16px; width:auto; max-width:calc(100% - 32px); bottom:16px; font-size:11px; padding:18px 24px; }
+}
+@media(max-width:360px) { .wedding-header { padding-inline:12px; }.wedding-wordmark {font-size:25px}.header-tools{gap:8px}.hero h1{font-size:36px}.hero__actions{gap:12px}.hero__actions .btn{font-size:14px}.about__portrait img{height:320px} }
+/* The static menu replaces the old masked, scrolling loop. */
+.site-menu { overflow-x:hidden; grid-template-rows:auto auto; align-content:space-between; padding:125px clamp(24px,7vw,120px) 30px; }
+.menu-stage { padding-top:0; }
+.menu-nav { mask-image:none; -webkit-mask-image:none; }
+.site-menu.is-open .menu-loop a { opacity:.85; font-size:clamp(27px,4.4vh,54px); }
+.menu-foot-row { margin-top:20px; padding-bottom:0; }
+@media(max-width:700px) {
+ .site-menu { padding-top:110px; padding-bottom:28px; row-gap:20px; }
+ .site-menu.is-open .menu-loop a { font-size:clamp(26px,4.6svh,39px); }
+ .menu-foot-row { margin-top:10px; }
+}
+/* Pastilla Hover Central recuperada, ahora en el lateral derecho. */
+.wedding-header {
+ top:22px; right:24px; left:auto; width:auto; height:54px;
+ display:flex; gap:20px; padding:0 7px 0 24px;
+ color:var(--ivory); background:rgba(22,17,15,.62);
+ border:1px solid rgba(247,243,232,.18); border-radius:999px;
+ backdrop-filter:blur(18px) saturate(1.2); -webkit-backdrop-filter:blur(18px) saturate(1.2);
+ box-shadow:0 10px 32px rgba(0,0,0,.28); transform:none;
+}
+.wedding-header.is-hidden { transform:translateY(calc(-100% - 30px)); }
+body.menu-open .wedding-header { background:rgba(30,20,18,.75); border-color:rgba(247,243,232,.32); }
+.wedding-wordmark { font-size:15px; letter-spacing:.14em; }
+.header-tools { gap:0; }
+.menu-button { width:44px; min-width:44px; height:42px; padding:5px; border:0; border-radius:50%; background:rgba(247,243,232,.08); }
+.menu-button:hover { background:rgba(247,243,232,.18); color:var(--ivory); }
+.menu-button__cupid { display:block; width:34px; height:32px; background:currentColor; mask:url('assets/cupid-isotipo.svg') center/contain no-repeat; -webkit-mask:url('assets/cupid-isotipo.svg') center/contain no-repeat; transition:transform .4s var(--ease-out),opacity .25s; }
+.menu-button:hover .menu-button__cupid { transform:rotate(-12deg) scale(1.08); }
+.menu-button i { display:none; }
+body.menu-open .menu-button__cupid { display:none; }
+body.menu-open .menu-button i { display:block; }
+.language-switch.language-switch--corner { position:fixed; z-index:81; top:26px; left:24px; padding:0 9px; border:1px solid var(--line-strong); border-radius:999px; background:var(--paper); color:var(--ink); }
+.language-switch--corner .language-options { left:0; right:auto; }
+.hero { margin-top:0; height:100svh; max-height:980px; }
+@media(max-width:700px) {
+ .wedding-header { top:14px; right:14px; height:48px; gap:13px; padding-left:19px; }
+ .wedding-wordmark { font-size:13px; letter-spacing:.11em; }
+ .menu-button { width:40px; min-width:40px; height:38px; padding:4px; }
+ .menu-button__cupid { width:31px; height:29px; }
+ .language-switch.language-switch--corner { top:16px; left:14px; padding-inline:4px; }
+ .language-switch--corner .language-toggle { min-height:42px; }
+ .hero { margin-top:0; height:auto; max-height:none; }
+ .hero__copy { padding-top:140px; min-height:565px; }
+}
+/* Marca centrada; el control lateral del menú contiene solo el cupido. */
+.wedding-header {
+ top:0; left:0; right:0; width:100%; height:100px;
+ display:grid; grid-template-columns:1fr auto 1fr; gap:20px;
+ padding:0 24px; background:var(--paper); color:var(--ink);
+ border:0; border-bottom:1px solid var(--line-strong); border-radius:0;
+ box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+.wedding-wordmark { grid-column:2; font-size:clamp(25px,3.2vw,48px); letter-spacing:-.045em; }
+.header-tools {
+ grid-column:3; justify-self:end; padding:5px; border-radius:50%;
+ color:var(--ivory); background:rgba(22,17,15,.62);
+ border:1px solid rgba(247,243,232,.18);
+ backdrop-filter:blur(18px) saturate(1.2); -webkit-backdrop-filter:blur(18px) saturate(1.2);
+ box-shadow:0 10px 32px rgba(0,0,0,.18);
+}
+body.menu-open .wedding-header { background:var(--wine); color:var(--ivory); }
+.hero { margin-top:100px; height:calc(100svh - 100px); max-height:880px; }
+@media(max-width:700px) {
+ .wedding-header { top:0; right:0; height:80px; padding:0 14px; gap:8px; }
+ .wedding-wordmark { font-size:clamp(23px,6vw,29px); letter-spacing:-.045em; }
+ .header-tools { padding:3px; }
+ .hero { margin-top:80px; height:auto; max-height:none; }
+ .hero__media { order:-1; height:40svh; min-height:300px; max-height:400px; }
+ .hero__media--desktop { display:none; }
+ .hero__media--mobile { display:block; border-left:0; border-top:1px solid var(--line-strong); }
+ .hero__copy { order:1; padding:58px 24px 82px; min-height:680px; }
+}
+
+/* Sobre mí: composición móvil más editorial, inspirada en la referencia. */
+@media(max-width:700px) {
+ .about { display:block; padding:84px 0 100px; background:var(--paper); }
+ .about__portrait { min-height:0; height:475px; padding:0 24px; display:grid; place-items:center; background:none; }
+ .about__portrait::before { display:none; }
+ .about__portrait::after { display:none; }
+ .about__portrait img { position:relative; z-index:1; width:calc(100% - 108px); height:390px; margin:0; border:5px solid var(--surface); object-position:50% 28%; box-shadow:0 16px 32px rgba(22,17,15,.14); transform:scale(.7); }
+ .about__overlay-title { position:absolute; z-index:2; top:42px; left:0; display:grid; grid-template-columns:minmax(0,1fr); align-items:start; width:100%; margin:0; padding:0 24px; color:var(--ink); text-align:left; }
+ .about__overlay-title h2 { font-size:clamp(34px,9.3vw,52px); line-height:.92; }
+ .about__copy { position:relative; z-index:2; max-width:34rem; margin:38px auto 0; padding:0 48px; background:transparent; text-align:center; }
+ .about__copy .label { display:none; }
+ .about__copy h2 { display:none; }
+ .about__copy p:not(.label) { max-width:34rem; margin:0 auto; color:var(--ink-soft); font-size:17px; line-height:1.9; }
+ .about__copy p + p { margin-top:28px; }
+ .about__copy .btn { margin:38px auto 0; min-width:210px; }
+}
+
+/* La numeración editorial se reserva para el contenido, no para la navegación visual. */
+.tl-meta span { display:none; }
+.tl-meta { gap:0; }
+
+/* Reviews: tarjetas oscuras, tipografía íntima y firma editorial. */
+.voices {
+  background: #0d0d0d;
+  color: var(--ivory);
+}
+.voices .label { color: rgba(247,243,232,.52); }
+.voices__list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 38px;
+  margin-top: 3.6rem;
+  text-align: left;
+}
+.voices__list li {
+  align-items: stretch;
+  min-height: 360px;
+  padding: 34px 34px 30px;
+  border: 1px solid rgba(247,243,232,.12);
+  background: rgba(255,255,255,.025);
+  text-align: left;
+}
+.voices__list li:last-child { grid-column: 1 / -1; }
+.review-stars {
+  color: rgba(247,243,232,.82);
+  font: 500 1rem/1 var(--font-sans);
+  letter-spacing: .16em;
+}
+.voices blockquote {
+  max-width: 42rem;
+  margin: 3rem 0 2.5rem;
+  color: rgba(247,243,232,.68);
+  font: italic 200 clamp(1.3rem, 1.8vw, 1.8rem)/1.55 var(--font-serif);
+}
+.voices blockquote em { color: var(--ivory); }
+.voices__list li footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+}
+.review-avatar {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  border: 1px solid rgba(247,243,232,.24);
+  border-radius: 50%;
+  color: rgba(247,243,232,.8);
+  font: 500 .62rem/1 var(--font-sans);
+  letter-spacing: .04em;
+}
+.voices cite {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  color: var(--ivory);
+  font: normal 400 1rem/1 var(--font-sans);
+  letter-spacing: .02em;
+}
+.voices cite strong { font-weight: 500; }
+.voices cite small {
+  color: rgba(247,243,232,.38);
+  font: 500 .6rem/1.2 var(--font-sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+@media (max-width: 760px) {
+  .voices__list { grid-template-columns: 1fr; gap: 18px; margin-top: 2.8rem; }
+  .voices__list li, .voices__list li:last-child { grid-column: auto; min-height: 330px; padding: 28px 24px 26px; }
+  .voices blockquote { margin: 2.4rem 0 2.2rem; font-size: 1.35rem; line-height: 1.5; }
+}
+
+/* Delicate embroidery across every ivory and beige surface. */
+body,
+.wedding-header,
+.language-switch.language-switch--corner,
+.about,
+.proof,
+.hero__index,
+.story__frame,
+.cases__tab[aria-selected="true"],
+.cases__panel {
+  background-image: linear-gradient(rgba(244,240,232,.84),rgba(244,240,232,.84)), url('assets/embroidered-ivory.webp');
+  background-size: auto, 620px 620px;
+  background-position: center, center;
+}
+.about { background-image: linear-gradient(90deg,rgba(235,228,214,.84),rgba(244,240,232,.84)), url('assets/embroidered-ivory.webp'); }
+.proof { background-image: linear-gradient(180deg,rgba(244,240,232,.84) 0%,rgba(235,228,214,.84) 30%,rgba(235,228,214,.84) 70%,rgba(244,240,232,.84) 100%), url('assets/embroidered-ivory.webp'); }
+.hero__index { background-size: auto, 340px 340px; }
+
+/* Presentación en escritorio: retrato y texto dentro de una tarjeta editorial. */
+@media (min-width:1001px) {
+  .about {
+    grid-template-columns:1fr 1fr;
+    align-items:stretch;
+    gap:0;
+    width:calc(100% - clamp(80px,12vw,240px));
+    max-width:1320px;
+    margin:clamp(90px,10vw,150px) auto;
+    padding:0;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--surface);
+    background-image:none;
+    box-shadow:0 24px 70px rgba(25,20,18,.09);
+  }
+  .about__copy {
+    order:1;
+    justify-content:center;
+    padding:clamp(48px,6vw,84px);
+  }
+  .about__title-lockup { margin-bottom:34px; }
+  .about__copy h2 { font-size:clamp(46px,4.4vw,70px); }
+  .about__copy .btn { margin-top:clamp(32px,4vw,58px); }
+  .about__portrait {
+    order:2;
+    min-height:700px;
+    height:100%;
+    padding:0;
+    background:none;
+  }
+  .about__portrait img {
+    display:block;
+    width:100%;
+    height:100%;
+    min-height:700px;
+    border:0;
+    object-fit:cover;
+    object-position:50% 30%;
+  }
+}
+
+@media (max-width:700px) {
+  .experience__head > p:last-child { display:none; }
+}

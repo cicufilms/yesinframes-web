@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar en la historia — Yesinframes</title>
+  <meta name="description" content="Contadme lo esencial de vuestra boda en cuatro gestos. Sin formularios largos y sin compromiso.">
+  <meta name="theme-color" content="#3F5145">
+  <meta name="robots" content="noindex">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Yesinframes">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://www.yesinframes.com/historia.html">
+  <meta property="og:title" content="Contadme vuestra boda — Yesinframes">
+  <meta property="og:description" content="Cuatro preguntas breves para comprobar la fecha. Después seguimos en WhatsApp.">
+  <meta property="og:image" content="https://www.yesinframes.com/assets/og-yesinframes.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="historia.css?v=20261007-ctas1">
+  <link rel="stylesheet" href="page-transition.css?v=20261008-2">
+  <link rel="stylesheet" href="languages.css?v=20261005">
+  <link rel="icon" href="assets/favicon.svg">
+  <script>try{if(sessionStorage.getItem('yesinframes-story-entry')==='1'){document.documentElement.classList.add('story-arriving');sessionStorage.removeItem('yesinframes-story-entry');setTimeout(function(){document.documentElement.classList.remove('story-arriving','story-entering');},1500);}}catch(e){}</script>
+</head>
+<body class="story-page">
+  <div class="page-transition" aria-hidden="true"><span class="page-transition__wordmark">Yesinframes</span></div>
+  <main class="story-flow" id="story-flow">
+    <header class="story-header">
+      <a class="story-wordmark" href="index.html" aria-label="Volver a la página de inicio">Yesinframes</a>
+      <div class="language-switch" data-language-switch></div>
+      <a class="story-exit" href="index.html"><span>Salir</span><i aria-hidden="true"></i></a>
+    </header>
+
+    <div class="story-visual" aria-hidden="true">
+      <img id="story-image" src="assets/weddings/hero-dress-rug.webp" alt="">
+      <div class="story-visual__veil"></div>
+    </div>
+
+    <section class="story-panel" aria-labelledby="story-title">
+      <div class="story-progress" id="story-progress">
+        <div class="story-progress__meta">
+          <span id="step-current">01</span>
+          <span aria-hidden="true">—</span>
+          <span id="step-total">04</span>
+        </div>
+        <div class="story-progress__track" aria-hidden="true"><i id="progress-fill"></i></div>
+      </div>
+
+      <div class="story-content" id="story-content" aria-live="polite">
+        <p class="story-kicker" id="story-kicker">Solo cuatro gestos</p>
+        <h1 id="story-title">Empecemos por<br>lo más fácil.</h1>
+        <p class="story-question" id="story-question">¿Cuándo celebráis vuestra boda?</p>
+        <div class="story-options" id="story-options" role="group" aria-label="Elige una opción"></div>
+        <button class="story-unsure" id="story-unsure" type="button" hidden>Aún no lo sabemos</button>
+        <p class="story-reassurance" id="story-reassurance">Solo cuatro gestos. Menos de un minuto.</p>
+      </div>
+
+      <div class="story-complete" id="story-complete" hidden aria-live="polite">
+        <p class="story-kicker">Todo listo</p>
+        <h1 id="story-complete-title">Ya tenemos el principio de vuestra historia.</h1>
+        <p class="story-question">El resto, nos lo contamos con calma.</p>
+        <p class="story-summary" id="story-summary"></p>
+        <p class="story-message-note">He preparado un mensaje con vuestras respuestas. Solo tendréis que pulsar enviar.</p>
+        <a class="story-whatsapp-button" id="story-whatsapp-final" href="#" target="_blank" rel="noreferrer">Continuar en WhatsApp <span aria-hidden="true">→</span></a>
+        <p class="story-trust">Os escribo yo, no una plantilla. Sin compromiso.</p>
+      </div>
+
+      <nav class="story-footer" aria-label="Navegación del formulario">
+        <button class="story-back" id="story-back" type="button" disabled><span aria-hidden="true">←</span> Atrás</button>
+        <a class="story-whatsapp-link" id="story-whatsapp-direct" href="#" target="_blank" rel="noreferrer">Prefiero hablar directamente <span aria-hidden="true">→</span> <u>WhatsApp</u></a>
+      </nav>
+    </section>
+
+    <noscript>
+      <div class="story-noscript">Para recorrer esta historia necesitas activar JavaScript. También puedes escribir directamente a <a href="mailto:hola@yesinframes.com">hola@yesinframes.com</a>.</div>
+    </noscript>
+  </main>
+
+
+  <script src="translations.js?v=20261007-location1" defer></script>
+  <script src="languages.js?v=20261005" defer></script>
+  <script src="historia.js?v=20261007-location1" defer></script>
+  <script src="page-transition.js?v=20261008-1" defer></script>
+</body>
+</html>
